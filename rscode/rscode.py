@@ -27,7 +27,7 @@ def _load():
             pass
     if not success:
         raise RuntimeError('Couldn''t load shared rscode library. Please '
-                           'the rscode README.')
+                           'see the rscode README.')
 
     _rs.init_rs.restype = ctypes.c_voidp
     _rs.init_rs.argtypes = (ctypes.c_int,  # symsize
