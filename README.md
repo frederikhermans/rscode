@@ -8,8 +8,7 @@ modifications for Win32 by Gábor Sörös (https://people.inf.ethz.ch/soeroesg/)
 
 ## Install ##
 
-You need to build the shared library for this Python module to work.
-Simply run `make` in the `c-src` directory.
+    $ pip install git+https://github.com/frederikhermans/rscode
 
 ## Example ##
 
