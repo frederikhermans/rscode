@@ -11,4 +11,5 @@ setuptools.setup(name='rscode',
                  author='Frederik Hermans',
                  license='GPL3',
                  url='https://github.com/frederikhermans/rscode',
-                 cmdclass={'build_ext': distutils.command.build_ext.build_ext})
+                 cmdclass={'build_ext': distutils.command.build_ext.build_ext},
+                 install_requires=['numpy'])
