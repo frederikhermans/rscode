@@ -1,18 +1,14 @@
 import setuptools
-import subprocess
-import distutils.command.build_py
-
-
-class BuildWithMake(distutils.command.build_py.build_py):
-    def run(self):
-        subprocess.check_call(['make', '-C', 'c-src'])
-        distutils.command.build_py.build_py.run(self)
-
+from setuptools import Extension
+import distutils.command.build_ext
 
 setuptools.setup(name='rscode',
                  version='1.0a',
                  packages=setuptools.find_packages(),
+                 ext_modules=[Extension('rscode.reed_solomon',
+                                        ['c-src/reed_solomon.c'],
+                                        libraries=['m'])],
                  author='Frederik Hermans',
                  license='GPL3',
-                 cmdclass={'build_py': BuildWithMake},
-                 url='https://github.com/frederikhermans/rscode')
+                 url='https://github.com/frederikhermans/rscode',
+                 cmdclass={'build_ext': distutils.command.build_ext.build_ext})
